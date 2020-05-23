@@ -6,7 +6,7 @@ const FileLink = ({ link: { title, desc, link: url } }) => {
       className='content'
       style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
     >
-      <h2><a href={url}>{title}</a></h2>
+      <h2><a target="_blank" rel="noopener" href={url}>{title}</a></h2>
       <p>{desc}</p>
     </div>
   )
