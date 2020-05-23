@@ -1,16 +1,15 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import Content, {HTMLContent} from '../components/Content'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
+import Content, { HTMLContent } from '../components/Content'
+import Layout from '../components/Layout'
 
-export const GivingPageTemplate = ({title, content, contentComponent}) => {
+export const GivingPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <div>
+    <Layout>
       <section className='hero is-primary is-bold'>
         <div className='hero-body'>
           <div className='container'>
@@ -37,7 +36,7 @@ export const GivingPageTemplate = ({title, content, contentComponent}) => {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   )
 }
 
@@ -47,8 +46,8 @@ GivingPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
 }
 
-const GivingPage = ({data}) => {
-  const {markdownRemark: post} = data
+const GivingPage = ({ data }) => {
+  const { markdownRemark: post } = data
 
   return (
     <div>

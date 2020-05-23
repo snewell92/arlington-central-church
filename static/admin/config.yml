@@ -10,8 +10,28 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/materials/index.md"
+        label: "Materials"
+        name: "materials"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "materials-page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Subtitle", name: "subtitle", widget: "string"}
+          - label: "Downloads"
+            name: "files"
+            widget: "list"
+            fields:
+              - label: "File Link"
+                name: "link"
+                widget: "string"
+              - label: "File Title"
+                name: "title"
+                widget: "string"
+              - label: "File Description"
+                name: "desc"
+                widget: "string"
       - file: "src/pages/events/index.md"
-        label: "Events Page"
+        label: "Events"
         name: "events"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "events-page"}

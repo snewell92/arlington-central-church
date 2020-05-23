@@ -1,12 +1,10 @@
-/**
- * Created by vaibhav on 2/4/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import Event from '../components/Event'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
+import Layout from '../components/Layout';
 
-const getiFrameHtml = () => ({  
+const getiFrameHtml = () => ({
   __html: '<iframe src="https://calendar.google.com/calendar/embed?title=ACC%20Events&amp;showPrint=0&amp;height=600&amp;wkst=1&amp;hl=en&amp;bgcolor=%2333cc00&amp;src=arlingtoncentralchurch%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="100%" height="700px" frameborder="0" scrolling="no"></iframe>'
 });
 
@@ -15,10 +13,10 @@ export const EventsPageTemplate = ({
   subtitle,
   meta_title,
   meta_description,
-  events,
+  // events,
 }) => {
   return (
-    <div>
+    <Layout>
       <Helmet>
         <title>{meta_title}</title>
         <meta name='description' content={meta_description} />
@@ -46,7 +44,7 @@ export const EventsPageTemplate = ({
           <div dangerouslySetInnerHTML={getiFrameHtml()}></div>
         </div>
       </section>
-    </div>
+    </Layout>
   )
 }
 
@@ -58,8 +56,8 @@ EventsPageTemplate.propTypes = {
   events: PropTypes.array
 }
 
-const EventsPage = ({data}) => {
-  const {frontmatter} = data.markdownRemark
+const EventsPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark
   return (
     <EventsPageTemplate
       title={frontmatter.title}

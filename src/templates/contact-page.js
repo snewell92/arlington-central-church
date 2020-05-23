@@ -1,10 +1,9 @@
-/**
- * Created by vaibhav on 2/4/18
- */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
+import { graphql } from 'gatsby'
 import Contact from '../components/Contact'
+import Layout from '../components/Layout'
 
 export const ContactPageTemplate = ({
   title,
@@ -14,7 +13,7 @@ export const ContactPageTemplate = ({
   contacts,
 }) => {
   return (
-    <div>
+    <Layout>
       <Helmet>
         <title>{meta_title}</title>
         <meta name='description' content={meta_description} />
@@ -44,7 +43,7 @@ export const ContactPageTemplate = ({
           )}
         </div>
       </section>
-    </div>
+    </Layout>
   )
 }
 
@@ -57,8 +56,8 @@ ContactPageTemplate.propTypes = {
 
 }
 
-const ContactPage = ({data}) => {
-  const {frontmatter} = data.markdownRemark
+const ContactPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark
   return (
     <ContactPageTemplate
       title={frontmatter.title}

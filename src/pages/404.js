@@ -1,6 +1,3 @@
-/**
- * Created by vaibhav on 31/3/18
- */
 import React from 'react'
 
 const NotFoundPage = () => (
@@ -12,11 +9,11 @@ const NotFoundPage = () => (
             <div className='column is-10 is-offset-1'>
               <div className='section is-centered'>
                 <h1 className='title'>
-                                    404: NOT FOUND
+                  404: NOT FOUND
                 </h1>
                 <h2 className='subtitle'>
-                                    You just hit a route that doesn&#39;t exist... the
-                                    sadness.
+                  You just hit a route that doesn&#39;t exist... the
+                  sadness.
                 </h2>
               </div>
             </div>

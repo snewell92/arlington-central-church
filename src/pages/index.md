@@ -7,12 +7,9 @@ meta_description: >-
 heading: Arlington Central Church
 description: >-
   A church of friends and family.
-offerings:
-  blurbs:
-    - image: /img/meeting-space.png
-      text: >
-        A place to mature in your faith as a disciple of Christ. We use
-        a technique called 'a story and a conversation' to engage ourselves
-        in the greater narrative of God's story. Come join our family
-        as we grow together and "keep in step with the Spirit"!
+blurb: >-
+  A place to mature in your faith as a disciple of Christ. We use
+  a technique called 'a story and a conversation' to engage ourselves
+  in the greater narrative of God's story. Come join our family
+  as we grow together and "keep in step with the Spirit"!
 ---
