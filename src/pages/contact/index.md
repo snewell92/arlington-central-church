@@ -4,7 +4,7 @@ title: Contact Us
 subtitle: We'd Love To Hear From You, Feel Free To Drop A Mail
 meta_title: ACC | Contact
 meta_description: >-
- Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean 
+ Arlington Central Church contacts.
 contacts:
   - email: tbennettgreen@gmail.com
     name: Tom Green

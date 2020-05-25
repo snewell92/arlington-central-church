@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
+import FileLink from '../components/FileLink'
 import Layout from '../components/Layout'
 
-export const HomePageTemplate = ({
+export const MaterialsPageTemplate = ({
   title,
-  heading,
-  description,
+  subtitle,
   meta_title,
-  meta_description
+  meta_description,
+  links,
 }) => (
     <Layout>
       <Helmet>
@@ -25,56 +26,47 @@ export const HomePageTemplate = ({
                   <h1 className='title'>
                     {title}
                   </h1>
+                  <h2 className='subtitle'>
+                    {subtitle}
+                  </h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section className='section section--gradient'>
+      <section className='section'>
         <div className='container'>
-          <div className='section'>
-            <div className='columns'>
-              <div className='column is-10 is-offset-1'>
-                <div className='content'>
-                  <div>
-                    <h3 className='has-text-weight-semibold is-size-2'>
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          {links.map((link, id) =>
+            <FileLink key={id} link={link} />
+          )}
         </div>
       </section>
     </Layout>
   )
 
-HomePageTemplate.propTypes = {
+MaterialsPageTemplate.propTypes = {
   title: PropTypes.string,
+  subtitle: PropTypes.string,
   meta_title: PropTypes.string,
   meta_description: PropTypes.string,
-  heading: PropTypes.string,
-  description: PropTypes.string
+  links: PropTypes.array,
 }
 
-const HomePage = ({ data }) => {
+const MaterialsPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
   return (
-    <HomePageTemplate
+    <MaterialsPageTemplate
       title={frontmatter.title}
+      subtitle={frontmatter.subtitle}
       meta_title={frontmatter.meta_title}
       meta_description={frontmatter.meta_description}
-      heading={frontmatter.heading}
-      description={frontmatter.description}
+      links={frontmatter.links}
     />
   )
 }
 
-HomePage.propTypes = {
+MaterialsPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -82,17 +74,22 @@ HomePage.propTypes = {
   }),
 }
 
-export default HomePage
+export default MaterialsPage
 
-export const pageQuery = graphql`
-  query IndexPage($id: String!) {
+export const materialsPageQuery = graphql`
+  query MaterialsPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        subtitle
         meta_title
         meta_description
         heading
-        description
+        links {
+          link
+          title
+          desc
+        }
       }
     }
   }
