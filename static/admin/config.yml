@@ -15,18 +15,18 @@ collections:
         name: "materials"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "materials-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Subtitle", name: "subtitle", widget: "string"}
-          - label: "Links"
+          - {label: "Page Title", name: "title", widget: "string"}
+          - {label: "Page Subtitle", name: "subtitle", widget: "string"}
+          - label: "File Links"
             name: "links"
             widget: "list"
             fields:
-              - label: "File Link"
+              - label: "Link"
                 name: "link"
                 widget: "string"
-              - label: "File Title"
+              - label: "Link Title"
                 name: "title"
                 widget: "string"
-              - label: "File Description"
+              - label: "Link Description"
                 name: "desc"
                 widget: "string"
