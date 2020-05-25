@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import '../assets/styles.sass'
 import { MaterialPageTemplate } from '../../templates/materials-page'
 
 const MaterialsPagePreview = ({ entry, getAsset }) => {
-  const linkData = entry.getIn(['data', 'files'])
+  const linkData = entry.getIn(['data', 'links'])
   const links = linkData ? linkData.toJS() : []
 
   return (
