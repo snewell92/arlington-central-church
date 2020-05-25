@@ -1,28 +1,7 @@
 import React from 'react'
 import favicon from './img/favicon.ico'
 
-let inlinedStyles = ''
-if (process.env.NODE_ENV === 'production') {
-  try {
-    /* eslint import/no-webpack-loader-syntax: off */
-    inlinedStyles = require('!raw-loader!../public/styles.css')
-  } catch (e) {
-    /* eslint no-console: "off" */
-    console.log(e)
-  }
-}
-
 export default ({ headComponents, body, postBodyComponents }) => {
-  let css
-  if (process.env.NODE_ENV === 'production') {
-    css = (
-      <style
-        id='gatsby-inlined-css'
-        dangerouslySetInnerHTML={{ __html: inlinedStyles }}
-      />
-    )
-  }
-
   return (
     <html lang='en' className='has-navbar-fixed-top'>
       <head>
@@ -43,7 +22,6 @@ export default ({ headComponents, body, postBodyComponents }) => {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        {css}
       </head>
       <body>
         <div
