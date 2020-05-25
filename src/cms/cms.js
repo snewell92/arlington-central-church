@@ -1,7 +1,5 @@
-import CMS from 'netlify-cms'
-
-// import EventsPagePreview from './preview-templates/EventsPagePreview'
+import CMS from 'netlify-cms-app'
+import '../components/all.sass'
 import MaterialsPagePreview from './preview-templates/MaterialsPagePreview'
 
-// CMS.registerPreviewTemplate('events', EventsPagePreview)
 CMS.registerPreviewTemplate('materials', MaterialsPagePreview)

@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: master
 
+local_backend: true
+
 publish_mode: editorial_workflow
 media_folder: static/img
 public_folder: /img
@@ -10,11 +12,10 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/pages/materials/index.md"
+      - file: "src/pages/materials.md"
         label: "Materials"
         name: "materials"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "materials-page"}
           - {label: "Page Title", name: "title", widget: "string"}
           - {label: "Page Subtitle", name: "subtitle", widget: "string"}
           - label: "File Links"
