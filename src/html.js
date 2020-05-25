@@ -1,28 +1,10 @@
 import React from 'react'
 import favicon from './img/favicon.ico'
-
-let inlinedStyles = ''
-if (process.env.NODE_ENV === 'production') {
-  try {
-    /* eslint import/no-webpack-loader-syntax: off */
-    inlinedStyles = require('!raw-loader!../public/styles.css')
-  } catch (e) {
-    /* eslint no-console: "off" */
-    console.log(e)
-  }
-}
+import appleIcon from './img/apple-touch-icon.png'
+import favMd from './img/favicon-32x32.png'
+import favLg from './img/favicon-16x16.png'
 
 export default ({ headComponents, body, postBodyComponents }) => {
-  let css
-  if (process.env.NODE_ENV === 'production') {
-    css = (
-      <style
-        id='gatsby-inlined-css'
-        dangerouslySetInnerHTML={{ __html: inlinedStyles }}
-      />
-    )
-  }
-
   return (
     <html lang='en' className='has-navbar-fixed-top'>
       <head>
@@ -30,7 +12,9 @@ export default ({ headComponents, body, postBodyComponents }) => {
         <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />
         {headComponents}
         <link rel='shortcut icon' href={favicon} />
-        {css}
+        <link rel="apple-touch-icon" sizes="180x180" href={appleIcon} />
+        <link rel="icon" type="image/png" sizes="32x32" href={favLg} />
+        <link rel="icon" type="image/png" sizes="16x16" href={favMd} />
       </head>
       <body>
         <div

@@ -14,9 +14,6 @@ const NavBar = () => {
       </div>
       <div className='navbar-menu' id='navMenu'>
         <div className='navbar-start'>
-          <Link className='navbar-item' to='/events'>
-            Events
-          </Link>
           <Link className='navbar-item' to='/giving'>
             Giving
           </Link>

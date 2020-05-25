@@ -1,11 +1,12 @@
 import React from 'react'
 
 const Footer = () => (
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
+  <footer className="footer">
+    <div className="content has-text-centered">
+      <h3 className="subtitle">
         The Arlington Central Church
-        </p>
+      </h3>
+      <p><a href="/admin">Admin Page</a></p>
     </div>
   </footer>
 )
