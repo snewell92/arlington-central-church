@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import '../assets/styles.sass'
+import '../../assets/styles.sass'
 import { MaterialPageTemplate } from '../../templates/materials-page'
 
 const MaterialsPagePreview = ({ entry, getAsset }) => {
