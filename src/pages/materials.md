@@ -12,4 +12,8 @@ links:
   - link: https://www.facebook.com/groups/756649947864875/
     title: Facebook Page
     desc: Connect with us on Facebook!
+  - link: https://docs.google.com/forms/d/e/1FAIpQLSehoSh-qYM-bltrwFnIlNSbYvblSCQAaUL7iPq18hiQJMIC6w/viewform?usp=sf_link
+    title: Contact Form
+    desc: If you would like to get in contact with a leader or learn more about our
+      church feel free to fill out this form!
 ---
