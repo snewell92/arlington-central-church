@@ -8,5 +8,5 @@ links:
     desc: 'The 2019 complete FOJ study guide for 1-1 bible studies'
   - link: 'https://www.thenortheastchurch.com/'
     title: 'NEG Church'
-    desc: 'The northeast garland church - the church that planted ours~'
+    desc: 'The northeast garland church - the church that planted ours!'
 ---
